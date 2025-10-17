@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MirDore — Luxury Dark Store</title>
+  <meta name="description" content="MirDore — Premium fashion & accessories. Dark luxury theme demo for GitHub Pages." />
+  <style>
+    /* ---------- Google-like reset ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body{height:100%;}
+    body{
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,#050505 0%, #0a0a0b 60%);
+      color:#e9e6e1;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.4;
+      padding:32px;
+    }
+
+    /* ---------- container ---------- */
+    .container{ max-width:1200px; margin:0 auto; }
+
+    /* ---------- Header ---------- */
+    header{ display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:28px }
+    .brand{ display:flex; align-items:center; gap:12px }
+    .logo{ width:54px; height:54px; border-radius:10px; display:grid; place-items:center; background:linear-gradient(135deg,#b88b3a,#d6b86a); box-shadow:0 6px 22px rgba(214,184,106,0.07); }
+    .logo svg{ width:34px; height:34px }
+    .brand h1{ font-size:20px; letter-spacing:1px; color:#f6efe6 }
+    .brand p{ font-size:12px; color:#cdbf9a }
+
+    nav{ display:flex; gap:16px; align-items:center }
+    nav a{ color:#cfc7b0; text-decoration:none; font-size:14px; padding:8px 12px; border-radius:8px }
+    nav a:hover{ background:rgba(255,255,255,0.03) }
+
+    /* ---------- Hero ---------- */
+    .hero{ display:flex; gap:28px; align-items:center; margin-bottom:28px }
+    .hero-left{ flex:1 }
+    .eyebrow{ color:#bda76a; font-weight:600; font-size:13px; letter-spacing:1px; margin-bottom:8px }
+    .hero-title{ font-size:36px; color:#fff; margin-bottom:10px }
+    .hero-desc{ color:#cfc7b0; max-width:560px }
+    .cta{ margin-top:18px }
+    .btn{ display:inline-block; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:700 }
+    .btn-primary{ background:linear-gradient(90deg,#b88b3a,#d6b86a); color:#050505 }
+    .btn-ghost{ border:1px solid rgba(255,255,255,0.06); color:#dcd6c7; background:transparent }
+
+    .hero-right{ width:420px; min-width:260px; border-radius:14px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12)); padding:20px }
+    .hero-image{ width:100%; height:260px; border-radius:12px; background-image:url('https://images.unsplash.com/photo-1520975698517-9f0f0e5b7c60?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=ef3d1c3a2e4b3a8d0f2f3a7d6b6c8f1a'); background-size:cover; background-position:center; margin-bottom:14px }
+    .price-badge{ display:inline-block; background:rgba(0,0,0,0.45); padding:8px 10px; border-radius:8px; color:#f1e7cd; font-weight:700 }
+
+    /* ---------- Products ---------- */
+    .section-title{ font-size:20px; margin:16px 0; color:#efe9dc }
+    .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px }
+
+    .card{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12)); border-radius:12px; padding:14px; position:relative; overflow:hidden; border:1px solid rgba(255,255,255,0.02) }
+    .card img{ width:100%; height:220px; object-fit:cover; border-radius:8px; margin-bottom:10px }
+    .card h3{ font-size:16px; color:#fff; margin-bottom:6px }
+    .meta{ color:#cfc7b0; font-size:13px; margin-bottom:12px }
+    .price-row{ display:flex; justify-content:space-between; align-items:center }
+    .price{ font-weight:800; color:#f6efe6 }
+    .old{ color:#9b8b6a; text-decoration:line-through; font-size:13px }
+    .buy{ padding:8px 12px; border-radius:8px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:#d5caa1; font-weight:700; cursor:pointer }
+
+    /* overlay gold shine */
+    .gold-shine{ position:absolute; top:-40%; right:-30%; width:260px; height:260px; transform:rotate(25deg); background:linear-gradient(90deg, rgba(184,139,58,0.18), rgba(214,184,106,0.06)); filter:blur(28px); pointer-events:none }
+
+    /* footer */
+    footer{ margin-top:40px; border-top:1px solid rgba(255,255,255,0.03); padding-top:20px; display:flex; justify-content:space-between; align-items:center }
+    .small{ color:#bfb49a; font-size:13px }
+
+    /* responsive */
+    @media (max-width:980px){ .grid{ grid-template-columns:repeat(2,1fr) } .hero{ flex-direction:column } .hero-right{ width:100% } }
+    @media (max-width:600px){ .grid{ grid-template-columns:1fr } .brand h1{ font-size:16px } .hero-title{ font-size:26px } }
+
+    /* small animation */
+    .card:hover{ transform:translateY(-6px); transition:all .22s ease }
+    .logo{ transition:transform .35s ease } .logo:hover{ transform:translateY(-4px) }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12c2 4 6 8 12 8s10-4 10-8" stroke="#0a0a0a" stroke-width="0"/>
+            <text x="50%" y="52%" text-anchor="middle" fill="#050505" font-weight="800" font-size="12">MD</text>
+          </svg>
+        </div>
+        <div>
+          <h1>MirDore</h1>
+          <p>Luxury • Street • Accessories</p>
+        </div>
+      </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="eyebrow">LIMITED DROP</div>
+          <h2 class="hero-title">Dark Luxury — Fashion & Accessories</h2>
+          <p class="hero-desc">MirDore lae raha hai curated fashion aur accessories — bold designs, premium look. International style jo local prices se milta hai. Shop now — limited stock.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#products">Explore Collection</a>
+            <a class="btn btn-ghost" href="#about">About MirDore</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="hero-image"></div>
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div style="font-weight:800;color:#fff">Gold Edition Watch</div>
+              <div style="font-size:13px;color:#cfc7b0">Limited Release • Premium</div>
+            </div>
+            <div style="text-align:right">
+              <div class="price-badge">$48</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="gold-shine" aria-hidden></div>
+
+      <section id="products">
+        <h3 class="section-title">Trending Now</h3>
+        <div class="grid" id="productGrid">
+          <!-- PRODUCT CARDS INSERTED BY JS -->
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:28px">
+        <h3 class="section-title">About MirDore</h3>
+        <p class="small" style="max-width:860px">MirDore ek premium-styled online store demo hai — dark, luxurious aur street-style fusion. Ye website GitHub Pages pe host karne ke liye ready hai. "Buy" buttons abhi "Coming Soon" dikhayenge jab tak payment setup na ho jaye.</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="small">© MirDore — Built with vision • 2025</div>
+      <div class="small">Instagram: @MirDore • Coming Soon</div>
+    </footer>
+  </div>
+
+  <script>
+    // Sample product data - replace images / prices when ready
+    const products = [
+      { id:1, title:'Gold Edition Watch', desc:'Premium metal watch with leather straps', price:48, old:89, img:'https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=0c0b3b9b6a6f7e2d9d9a2a7f4e6f'},
+      { id:2, title:'Stealth Sneakers', desc:'Matte black sneakers with neon sole', price:62, old:129, img:'https://images.unsplash.com/photo-1519741498248-9f30d6b4b7b9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8d3b6a7f8a7a9b0c1d2e3f4a5b6c'},
+      { id:3, title:'Chain & Pendant', desc:'Stainless chain with custom pendant', price:22, old:49, img:'https://images.unsplash.com/photo-1495121605193-b116b5b09a8b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3f6a1b4c5d6e7f8a9b0c1d2e3f'},
+      { id:4, title:'Urban Cap', desc:'Silk-lined street cap', price:18, old:35, img:'https://images.unsplash.com/photo-1602810311766-4f7c2a5c3fd3?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=6a7b8c9d0e1f2a3b4c5d6e7f8a9b'},
+      { id:5, title:'Sleek Sunglasses', desc:'UV protected dark lenses', price:29, old:59, img:'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a2b3c4d5e6f7g8h9i0j'},
+      { id:6, title:'Mini Wireless Earbuds', desc:'Long battery, punchy bass', price:34, old:69, img:'https://images.unsplash.com/photo-1585386959984-a415522c1f69?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef1234567890'}
+    ];
+
+    const grid = document.getElementById('productGrid');
+    products.forEach(p=>{
+      const card = document.createElement('div'); card.className='card';
+      card.innerHTML = `
+        <img src="${p.img}" alt="${p.title}">
+        <h3>${p.title}</h3>
+        <div class="meta">${p.desc}</div>
+        <div class="price-row">
+          <div>
+            <div class="price">$${p.price}</div>
+            <div class="old">$${p.old}</div>
+          </div>
+          <div>
+            <button class="buy" data-id="${p.id}">COMING SOON</button>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    // Buy button behavior (coming soon modal)
+    document.addEventListener('click', e=>{
+      if(e.target && e.target.classList.contains('buy')){
+        showComingSoon();
+      }
+    });
+
+    function showComingSoon(){
+      const div = document.createElement('div');
+      div.style.position='fixed'; div.style.inset=0; div.style.display='grid'; div.style.placeItems='center';
+      div.style.background='rgba(0,0,0,0.7)'; div.style.zIndex=9999;
+      div.innerHTML = `
+        <div style='background:#0b0b0b;border:1px solid rgba(214,184,106,0.08);padding:22px;border-radius:12px;max-width:380px;text-align:center'>
+          <h2 style='color:#e9e6d9;margin-bottom:10px'>Coming Soon</h2>
+          <p style='color:#cfc7b0;margin-bottom:16px'>Payment setup abhi baki hai. Jaldi hi hum PayPal / Gumroad option add karenge. Aap hamari Instagram par follow karen: <strong>@MirDore</strong></p>
+          <button id='closeModal' style='padding:10px 14px;border-radius:8px;background:linear-gradient(90deg,#b88b3a,#d6b86a);border:none;font-weight:800'>Okay</button>
+        </div>
+      `;
+      document.body.appendChild(div);
+      document.getElementById('closeModal').addEventListener('click',()=>div.remove());
+    }
+  </script>
+</body>
+</html>
