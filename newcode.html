@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MirDore — Dark Luxury Fashion</title>
+  <meta name="description" content="MirDore — Curated luxury streetwear & accessories. Premium dark theme demo for your store." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:ital,wght@0,300;0,600;1,300&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#070607;
+      --panel:#0b0b0b;
+      --muted:#bfb6a0;
+      --cream:#efe6d0;
+      --gold-1: #b88b3a;
+      --gold-2: #d6b86a;
+      --glass: rgba(255,255,255,0.03);
+      --accent-shadow: 0 6px 30px rgba(184,139,58,0.06);
+      --radius: 14px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(214,184,106,0.03), transparent 6%),
+                  linear-gradient(180deg, var(--bg) 0%, #030303 100%);
+      color:var(--cream);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+      padding:28px;
+    }
+
+    .wrap{ max-width:1200px; margin:0 auto; }
+
+    /* Header */
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:28px;
+    }
+    .brand{ display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit }
+    .logo{
+      width:64px; height:64px; border-radius:12px;
+      background: linear-gradient(135deg,var(--gold-1),var(--gold-2));
+      display:grid; place-items:center; box-shadow:var(--accent-shadow);
+      flex-shrink:0;
+    }
+    .logo span{ font-family:"Cinzel", serif; color:#070607; font-weight:700; font-size:20px; letter-spacing:1px }
+    .brand h1{ font-size:18px; margin:0; letter-spacing:1px; font-weight:700 }
+    .brand p{ margin:0; font-size:12px; color:var(--muted) }
+
+    nav{ display:flex; gap:12px; align-items:center }
+    nav a{ color:var(--muted); text-decoration:none; font-weight:600; padding:8px 12px; border-radius:10px; font-size:14px }
+    nav a:hover{ background:rgba(255,255,255,0.02); color:var(--cream) }
+
+    /* Hero */
+    .hero{ display:grid; grid-template-columns: 1fr 420px; gap:30px; align-items:center; margin-bottom:28px }
+    .eyebrow{ color:var(--gold-2); font-weight:700; font-size:13px; letter-spacing:1.2px; margin-bottom:8px }
+    .hero h2{ font-family:"Cinzel", serif; font-size:40px; margin:0 0 12px 0; color:var(--cream) }
+    .hero p{ color:var(--muted); max-width:620px; margin-bottom:18px }
+
+    .cta{ display:flex; gap:12px; align-items:center }
+    .btn{
+      display:inline-block; padding:12px 18px; border-radius:12px; text-decoration:none; font-weight:700; text-transform:uppercase; letter-spacing:0.6px;
+      font-size:13px;
+    }
+    .btn-primary{ background:linear-gradient(90deg,var(--gold-1),var(--gold-2)); color:#070607; box-shadow:0 8px 28px rgba(214,184,106,0.08) }
+    .btn-ghost{ border:1px solid rgba(255,255,255,0.04); color:var(--cream); background:transparent }
+
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.16));
+      border-radius:16px; padding:16px; box-shadow:0 4px 20px rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.02);
+    }
+    .hero-card .image{
+      width:100%; height:260px; border-radius:12px; background-size:cover; background-position:center; margin-bottom:12px;
+      box-shadow: inset 0 -40px 80px rgba(0,0,0,0.25);
+    }
+    .badge{ display:inline-block; padding:6px 10px; border-radius:10px; background:rgba(0,0,0,0.45); color:var(--cream); font-weight:700 }
+
+    /* Products */
+    .section-title{ font-size:20px; margin:18px 0; color:var(--cream) }
+    .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(0,0,0,0.12));
+      border-radius:12px; padding:12px; position:relative; overflow:hidden; bor
